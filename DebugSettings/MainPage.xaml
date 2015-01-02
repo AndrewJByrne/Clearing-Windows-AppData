@@ -10,9 +10,10 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button  Content="add a roaming file" Click="Add_Roaming_File_Click" Width="200" HorizontalAlignment="Center"/>
-                <Button Content="add a local file" Click="Add_Local_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
-                <TextBlock MaxHeight="300" x:Name="tbStatus" Width="600"/>
+                <Button  Content="create a roaming file" Click="Add_Roaming_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
+                <Button Content="create a local file" Click="Add_Local_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
+                <Button Content="create a temp file" Click="Add_Temp_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
+                <TextBlock MaxHeight="300" x:Name="LastStatus" Width="600" Style="{StaticResource CaptionTextBlockStyle}"/>
             </StackPanel>
         </Grid>
     </Grid>

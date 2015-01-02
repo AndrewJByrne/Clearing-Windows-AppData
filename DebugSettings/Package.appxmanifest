@@ -1,38 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-
-  <Identity Name="548d0efa-a7dd-425b-b29e-e8cecd52072f"
-            Publisher="CN=Andrew"
-            Version="1.0.0.0" />
-
+  <Identity Name="548d0efa-a7dd-425b-b29e-e8cecd52072f" Publisher="CN=Andrew" Version="1.0.0.0" />
   <Properties>
     <DisplayName>DebugSettings</DisplayName>
-    <PublisherDisplayName>Andrew</PublisherDisplayName>
+    <PublisherDisplayName>@AndrewJByrne</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.3.0</OSMinVersion>
     <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
-    <Resource Language="x-generate"/>
+    <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application Id="App"
-        Executable="$targetnametoken$.exe"
-        EntryPoint="DebugSettings.App">
-        <m2:VisualElements
-            DisplayName="DebugSettings"
-            Square150x150Logo="Assets\Logo.png"
-            Square30x30Logo="Assets\SmallLogo.png"
-            Description="DebugSettings"
-            ForegroundText="light"
-            BackgroundColor="#464646">
-            <m2:SplashScreen Image="Assets\SplashScreen.png" />
-        </m2:VisualElements>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="DebugSettings.App">
+      <m2:VisualElements DisplayName="DebugSettings Sample for Windows" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Exploring application data using a Debug Settings flyout in the SettingsPane.  This flyout will only be displayed when the code is run in Debug. This is done deliberately in this sample to show how you can explore application data while developing you app with a handy UI, but not ship that UI when you release the app." ForegroundText="light" BackgroundColor="#464646">
+        <m2:SplashScreen Image="Assets\SplashScreen.png" />
+      </m2:VisualElements>
     </Application>
   </Applications>
   <Capabilities>

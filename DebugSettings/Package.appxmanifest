@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="DebugSettings.App">
-      <m2:VisualElements DisplayName="DebugSettings Sample for Windows" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Exploring application data using a Debug Settings flyout in the SettingsPane.  This flyout will only be displayed when the code is run in Debug. This is done deliberately in this sample to show how you can explore application data while developing you app with a handy UI, but not ship that UI when you release the app." ForegroundText="light" BackgroundColor="#464646">
+      <m2:VisualElements DisplayName="DebugSettings" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Explores app data using a custom Debug Settings flyout in the SettingsPane.  This flyout will only be displayed when the code is run in Debug. This is done deliberately in this sample to show how you can explore application data while developing you app with a handy UI, and not have to ship that UI when you release the app." ForegroundText="light" BackgroundColor="#464646">
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
       </m2:VisualElements>
     </Application>

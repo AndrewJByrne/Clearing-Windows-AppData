@@ -51,5 +51,21 @@ namespace DebugSettings
             await FileIO.WriteTextAsync(newTextFile, String.Format("File created at: {0}", DateTime.Now.ToString()));
             LastStatus.Text = String.Format("Create {0}", newTextFile.Path);
         }
+
+        private void Add_Roaming_Setting_Click(object sender, RoutedEventArgs e)
+        {
+            var settingKey = Guid.NewGuid().ToString();
+            var settingValue = DateTime.Now.ToString();
+            ApplicationData.Current.RoamingSettings.Values[settingKey] = settingValue;
+            LastStatus.Text = String.Format("Create new roaming setting Key:{0} Value:{1}", settingKey, settingValue);
+        }
+
+        private void Add_Local_Setting_Click(object sender, RoutedEventArgs e)
+        {
+            var settingKey = Guid.NewGuid().ToString();
+            var settingValue = DateTime.Now.ToString();
+            ApplicationData.Current.LocalSettings.Values[settingKey] = settingValue;
+            LastStatus.Text = String.Format("Create new roaming setting Key:{0} Value:{1}", settingKey, settingValue);
+        }
     }
 }

@@ -47,5 +47,6 @@
         <!-- Define more Content Sections below as necessary -->
         <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Information" />
         <TextBlock Style="{StaticResource CaptionTextBlockStyle}" x:Name="LastStatus"/>
+        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" x:Name="RoamingQuota"/>
     </StackPanel>
 </SettingsFlyout>

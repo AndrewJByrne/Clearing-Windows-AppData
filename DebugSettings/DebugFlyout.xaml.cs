@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -26,6 +27,25 @@ namespace DebugSettings
         public DebugFlyout()
         {
             this.InitializeComponent();
+            this.Loaded += DebugFlyout_Loaded;
+        }
+
+        async void DebugFlyout_Loaded(object sender, RoutedEventArgs e)
+        {
+            var total = await GetRoamingFolderSizeKBFromFiles();
+            RoamingQuota.Text = String.Format("Roaming Quota: Total {0} KB  Used {1} KB",ApplicationData.Current.RoamingStorageQuota.ToString(), total);
+        }
+
+        private async Task<double> GetRoamingFolderSizeKBFromFiles()
+        {
+            ulong total = 0;
+            foreach (var file in await Windows.Storage.ApplicationData.Current.RoamingFolder.GetFilesAsync(Windows.Storage.Search.CommonFileQuery.DefaultQuery))
+            {
+                var basicProperties = await file.GetBasicPropertiesAsync();
+                total += basicProperties.Size;
+            }
+
+            return total/1000d;
         }
 
         /// <summary>

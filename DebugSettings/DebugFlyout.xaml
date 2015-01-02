@@ -1,0 +1,51 @@
+﻿<SettingsFlyout
+    x:Class="DebugSettings.DebugFlyout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DebugSettings"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    IconSource="Assets/SmallLogo.png"
+    Title="DebugFlyout"
+    d:DesignWidth="346">
+
+    <!-- This StackPanel acts as a root panel for vertical layout of the content sections -->
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+
+        <!-- The StackPanel(s) below define individual content sections -->
+
+        <!-- Content Section 1-->
+        <StackPanel Style="{StaticResource SettingsFlyoutSectionStyle}">
+
+            <!-- Section 1 header -->
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="App data" />
+            <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="Select one or more data locations below and tap clear data to clear those locations. You can also tap the icon to the right to copy the path of each app data location onto the clipboard, so you can easily then paste it into Explorer to view the contents of each folder. " />
+
+            <!-- Section 1 body -->
+            <StackPanel Margin="0,10">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="local" x:Name="ClearLocal" Width="120"/>
+                    <AppBarButton Icon="Copy" x:Name="CopyLocal" Click="CopyLocal_Click" IsCompact="True" ToolTipService.ToolTip="copy path to clipboard"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox  Content="roaming" x:Name="ClearRoaming" Width="120"/>
+                    <AppBarButton Icon="Copy"  x:Name="CopyRoaming" Click="CopyRoaming_Click" IsCompact="True" ToolTipService.ToolTip="copy path to clipboard"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox  Content="temporary" x:Name="ClearTemporary" Width="120"/>
+                    <AppBarButton Icon="Copy" x:Name="CopyTemporary" Click="CopyTemporary_Click" IsCompact="True" ToolTipService.ToolTip="copy path to clipboard"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox  Content="local cache" x:Name="ClearLocalCache" Width="120"/>
+                    <AppBarButton Icon="Copy" x:Name="CopyLocalCache" Click="CopyLocalCache_Click" IsCompact="True" ToolTipService.ToolTip="copy path to clipboard"/>
+                </StackPanel>
+                <Button Content="clear data" x:Name="ClearData" Click="ClearData_Click" Margin="0,20,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Define more Content Sections below as necessary -->
+        <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Information" />
+        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" x:Name="LastStatus"/>
+    </StackPanel>
+</SettingsFlyout>

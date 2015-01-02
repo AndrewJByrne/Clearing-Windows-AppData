@@ -28,7 +28,9 @@ namespace DebugSettings
             this.InitializeComponent();
         }
 
-
+        /// <summary>
+        /// Uses ApplicationData.Current.ClearAsync() to clear whatever app data folders you selected.
+        /// </summary>
         private async void ClearData_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder status = new StringBuilder();
@@ -62,6 +64,13 @@ namespace DebugSettings
 
             LastStatus.Text = status.ToString();
         }
+
+
+        // Copy app data folder paths to clipboard. 
+        // Most of these folder paths are very long and don't show up too well on the small-width settings pane. 
+        // I decided it was easier to just send them to the clipboard and let you paste them into Explorer. 
+        // The ideal solution would be to have a button that launched Explorer to the particular folder. That
+        // isn't currently possible in Windows Runtime at the moment. 
 
         private void CopyLocal_Click(object sender, RoutedEventArgs e)
         {

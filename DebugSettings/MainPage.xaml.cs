@@ -76,5 +76,10 @@ namespace DebugSettings
             ApplicationData.Current.LocalSettings.Values[settingKey] = settingValue;
             LastStatus.Text = String.Format("Create new roaming setting Key:{0} Value:{1}", settingKey, settingValue);
         }
+
+        private void Show_Settings_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsPane.Show();
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.UI.ApplicationSettings;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,14 @@ namespace DebugSettings
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            // When the user opens the settings pane, I want to clear the status on this page, since it is no longer relevant.
+            SettingsPane.GetForCurrentView().CommandsRequested += (s, a) => { LastStatus.Text = string.Empty; };
         }
 
         private async void Add_Roaming_File_Click(object sender, RoutedEventArgs e)

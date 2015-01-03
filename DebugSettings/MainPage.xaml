@@ -9,15 +9,27 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid>
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button  Content="create a roaming file" Click="Add_Roaming_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
-                <Button Content="create a local file" Click="Add_Local_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
-                <Button Content="create a temp file" Click="Add_Temp_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
-                <Button Content="create a roaming setting" Click="Add_Roaming_Setting_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
-                <Button Content="create a local setting" Click="Add_Local_Setting_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
-                <TextBlock MaxHeight="300" x:Name="LastStatus" Width="600" Style="{StaticResource CaptionTextBlockStyle}"/>
-                <AppBarButton Icon="Setting" Label="settings" Click="Show_Settings_Click" HorizontalAlignment="Center"/>
-            </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
         </Grid>
+        <Viewbox Grid.Row="1" Grid.Column="1">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button  Content="create a roaming file" Click="Add_Roaming_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
+            <Button Content="create a local file" Click="Add_Local_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
+            <Button Content="create a temp file" Click="Add_Temp_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
+            <Button Content="create a roaming setting" Click="Add_Roaming_Setting_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
+            <Button Content="create a local setting" Click="Add_Local_Setting_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>
+            <TextBlock MaxHeight="300" x:Name="LastStatus" HorizontalAlignment="Stretch" Style="{StaticResource CaptionTextBlockStyle}"/>
+            <AppBarButton Icon="Setting" Label="settings" Click="Show_Settings_Click" HorizontalAlignment="Center"/>
+        </StackPanel>
+        </Viewbox>
     </Grid>
 </Page>

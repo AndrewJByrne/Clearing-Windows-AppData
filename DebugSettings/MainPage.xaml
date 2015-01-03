@@ -20,6 +20,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
         </Grid>
+        <!-- Using a ViewBox is a cheap way for me to scale the whole UI so that the text and buttons on this page are very readable          -->
+        <!-- This is a basic UI and no attempt has been made to use a ViewModel with Commanding or databinding. The main value in this sample -->
+        <!-- can be dound in the DebugSettings.xaml/DebugSettings.xaml.cs files                                                               -->
         <Viewbox Grid.Row="1" Grid.Column="1">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button  Content="create a roaming file" Click="Add_Roaming_File_Click" Width="200" HorizontalAlignment="Center" Margin="0,20"/>

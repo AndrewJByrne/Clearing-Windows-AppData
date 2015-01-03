@@ -48,10 +48,14 @@ namespace DebugSettings
         private async Task CreateFileInFolderAsync(IStorageFolder targetFolder, string suggestedFileName)
         {
             var newTextFile = await targetFolder.CreateFileAsync(suggestedFileName, Windows.Storage.CreationCollisionOption.GenerateUniqueName);
+
+            // This is a really useful way to write text to a file. For demo purposes, I will just store a timestamp in a text file. 
             await FileIO.WriteTextAsync(newTextFile, String.Format("File created at: {0}", DateTime.Now.ToString()));
             LastStatus.Text = String.Format("Created {0}", newTextFile.Path);
         }
 
+        // When you write to Roaming or Local settings, those values are actually stored in the registry. 
+        // To learn how to read those entires in the registry, check out http://lunarfrog.com/blog/2012/09/13/inspect-app-settings/
         private void Add_Roaming_Setting_Click(object sender, RoutedEventArgs e)
         {
             CreateNewAppSetting(ApplicationData.Current.RoamingSettings);
@@ -70,6 +74,8 @@ namespace DebugSettings
             LastStatus.Text = String.Format("Created new {0} setting Key: {1} Value: {2}", settingContainer.Locality.ToString(), settingKey, settingValue);
         }
 
+        // Even though the user can access the settings from the Settings Charm, I give the user an alternative here by opening the 
+        // SettingsPane programmatially when the user taps on the settings button in the UI. 
         private void Show_Settings_Click(object sender, RoutedEventArgs e)
         {
             SettingsPane.Show();

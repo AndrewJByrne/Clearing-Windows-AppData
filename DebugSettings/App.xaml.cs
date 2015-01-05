@@ -115,7 +115,8 @@ namespace DebugSettings
         private void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
         {
 
-#if DEBUG // I am only going to load this flyout when the app is running in Debug mode.
+#if DEBUG 
+            // I am only going to load this flyout when the app is running in Debug mode.
             args.Request.ApplicationCommands.Add(new SettingsCommand(
                 "Debug Settings", "Debug Settings", (handler) => ShowDebugSettingsFlyout()));
 #endif

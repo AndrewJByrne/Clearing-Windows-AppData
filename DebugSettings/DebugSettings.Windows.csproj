@@ -121,6 +121,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="DebugSettings_TemporaryKey.pfx" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.scale-100.png" />
